@@ -1,7 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=Install Greenlight
-Exec=curl -sSL https://raw.githubusercontent.com/dsoms/steam-deck-utils/main/Greenlight/install.sh | bash -s --
+Exec=curl -sSL https://raw.githubusercontent.com/dsoms/steam-deck-utils/main/Greenlight/install.sh | bash
 Icon=steamdeck-gaming-return
 Terminal=true
 Type=Application

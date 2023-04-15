@@ -93,7 +93,7 @@ echo -e "\nDownloading Greenlight"
 echo -e "\nChoose an option:"
 echo "1) Download latest release (default)"
 echo "2) Download specific version"
-read -p "Enter your choice: " CHOICE
+read -p "Enter your choice: " CHOICE < /dev/tty
 
 if [ -z "$CHOICE" ] || [ "$CHOICE" == "1" ]; then
     # Get the latest release tag
@@ -112,10 +112,10 @@ elif [ "$CHOICE" == "2" ]; then
 
     # Prompt the user to choose a tag
     echo
-    read -p "Enter the number of the version to download: " CHOICE
+    read -p "Enter the number of the version to download: " CHOICE < /dev/tty
     while ! [[ "$CHOICE" =~ ^[0-9]+$ ]] || [ "$CHOICE" -lt 1 ] || [ "$CHOICE" -gt 5 ]; do
         echo "Invalid choice. Please enter a number between 1 and 5"
-        read -p "Enter the number of the version to download: " CHOICE
+        read -p "Enter the number of the version to download: " CHOICE < /dev/tty
     done
     TAG=$(echo "$TAGS" | sed -n "${CHOICE}p")
 else
