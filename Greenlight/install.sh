@@ -4,8 +4,6 @@
 # ---------------------------------------------------------------------
 
 ## Variable definitions
-SCRIPT_NAME="$(basename "${BASH_SOURCE[0]}")"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 DECK_USER=$(grep "^User=" /etc/sddm.conf.d/steamos.conf | cut -d"=" -f2)
 DESKTOP_DIR="/home/${DECK_USER}/Desktop/Greenlight"
 GREENLIGHT_REPO="unknownskl/greenlight"
@@ -153,8 +151,5 @@ chmod +x "/home/${DECK_USER}/Desktop/Greenlight/Update Greenlight.desktop"
 echo -e "\nDone!"
 
 read -s -n 1 -p "Press any key to continue . . ."
-
-# Remove shell script file
-rm "$SCRIPT_DIR/$SCRIPT_NAME"
 
 echo ""
