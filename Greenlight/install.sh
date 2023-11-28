@@ -16,6 +16,7 @@ function initialize_pacman_keys() {
       echo "Initalizing pacman keys"
       pacman-key --init
       pacman-key --populate archlinux
+      pacman-key --populate holo
   fi
 }
 
@@ -46,11 +47,12 @@ echo "Creating Greenlight desktop folder"
 
 if [ -d "$DESKTOP_DIR" ]; then
   rm -r "$DESKTOP_DIR"
-  mkdir -p "$DESKTOP_DIR"
-
-  # Move to the created folder
-  cd "$DESKTOP_DIR" || exit
 fi
+
+mkdir -p "$DESKTOP_DIR"
+
+# Move to the created folder
+cd "$DESKTOP_DIR" || exit
 
 ## Disable readonly filesystem
 echo -e "\nDisabling readonly filesystem"

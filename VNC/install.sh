@@ -75,11 +75,12 @@ echo "Creating VNC desktop folder"
 
 if [ -d "$DESKTOP_VNC_DIR" ]; then
   rm -r "$DESKTOP_VNC_DIR"
-  mkdir -p "$DESKTOP_VNC_DIR"
-
-  # Move to the created folder
-  cd "$DESKTOP_VNC_DIR" || exit
 fi
+
+mkdir -p "$DESKTOP_VNC_DIR"
+
+# Move to the created folder
+cd "$DESKTOP_VNC_DIR" || exit
 
 ## Create desktop entries
 echo -e "\nCreating desktop entries"
@@ -110,7 +111,7 @@ chmod +x "${DESKTOP_VNC_DIR}/Stop VNC.desktop"
 
 LAUNCHER_TEXT="[Desktop Entry]
 Name=Set VNC Password
-Exec=sudo x11vnc -storepasswd; read -s -n 1 -p "Press any key to continue . . ."
+Exec=sudo x11vnc -storepasswd; read -s -n 1 -p 'Press any key to continue . . .'
 Icon=/usr/share/app-info/icons/archlinux-arch-community/64x64/x11vnc_computer.png
 Terminal=true
 Type=Application
@@ -165,6 +166,3 @@ echo -e "\nDone!"
 read -s -n 1 -p "Press any key to continue . . ."
 
 echo ""
-
-# Remove the script file itself
-rm -- "$0"
