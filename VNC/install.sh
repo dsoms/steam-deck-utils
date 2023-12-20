@@ -149,7 +149,7 @@ Path=
 Type=Application
 X-KDE-AutostartScript=true"
 
-echo "$SCRIPT_TEXT" > "/home/${DECK_USER}/.config/autostart/vnc_startup.sh.desktop"
+echo "$LAUNCHER_TEXT" > "/home/${DECK_USER}/.config/autostart/vnc_startup.sh.desktop"
 chown "${DECK_USER}" "/home/${DECK_USER}/.config/autostart/vnc_startup.sh.desktop"
 chmod +x "/home/${DECK_USER}/.config/autostart/vnc_startup.sh.desktop"
 
