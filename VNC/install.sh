@@ -65,7 +65,7 @@ initialize_pacman_keys
 install_packages x11vnc
 
 ## Enable readonly filesystem
-echo -e "\nRe-enabling readonly filesystem"
+echo -e "\nRe-enabling readonly filesystem\n"
 sudo steamos-readonly enable
 
 ## Create desktop folder
@@ -81,7 +81,7 @@ mkdir -p "$DESKTOP_VNC_DIR"
 cd "$DESKTOP_VNC_DIR" || exit
 
 ## Create desktop entries
-echo -e "\nCreating desktop entries"
+echo "Creating desktop entries"
 
 LAUNCHER_TEXT="[Desktop Entry]
 Name=Start VNC
@@ -132,7 +132,7 @@ chown "${DECK_USER}" "${DESKTOP_VNC_DIR}/Reinstall VNC.desktop"
 chmod +x "${DESKTOP_VNC_DIR}/Reinstall VNC.desktop"
 
 ## Create autostart scripts
-echo -e "\nCreating autostart scripts"
+echo "Creating autostart scripts"
 
 SCRIPT_TEXT="#!/bin/bash
 x11vnc -noxdamage -usepw -display :0 -no6 -forever -bg"
