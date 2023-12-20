@@ -26,12 +26,10 @@ DESKTOP_VNC_DIR="/home/${DECK_USER}/Desktop/VNC"
 
 ## Functions
 function initialize_pacman_keys() {
-  if [ ! -e "/etc/pacman.d/gnupg/trustdb.gpg" ]; then
-      echo "Initalizing pacman keys"
-      pacman-key --init
-      pacman-key --populate archlinux
-      pacman-key --populate holo
-  fi
+    echo -e "\nInitalizing pacman keys\n"
+    sudo pacman-key --init
+    sudo pacman-key --populate archlinux
+    sudo pacman-key --populate holo
 }
 
 function is_package_installed() {
